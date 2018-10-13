@@ -9,7 +9,7 @@ namespace IronTemple.ViewModels
         public Workout Workout { get; set; }
         public WorkoutDetailViewModel(Workout workout = null)
         {
-            Title = workout?.Text;
+            Title = workout?.Title;
             Workout = workout;
         }
     }

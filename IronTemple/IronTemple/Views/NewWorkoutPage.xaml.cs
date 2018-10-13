@@ -9,17 +9,17 @@ using IronTemple.Models;
 namespace IronTemple.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NewItemPage : ContentPage
+    public partial class NewWorkoutPage : ContentPage
     {
         public Workout Workout { get; set; }
 
-        public NewItemPage()
+        public NewWorkoutPage()
         {
             InitializeComponent();
 
             Workout = new Workout
             {
-                Text = "Workout name",
+                Title = "Workout name",
                 Description = "This is an workout description."
             };
 

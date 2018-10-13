@@ -26,7 +26,7 @@ namespace IronTemple.Views
 
             var item = new Workout
             {
-                Text = "Workout 1",
+                Title = "Workout 1",
                 Description = "This is an workout description."
             };
 

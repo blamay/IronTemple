@@ -12,24 +12,24 @@ namespace IronTemple.ViewModels
 {
     public class WorkoutsViewModel : BaseViewModel
     {
-        public ObservableCollection<Workout> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
+        public ObservableCollection<Workout> Workouts { get; set; }
+        public Command LoadWorkoutsCommand { get; set; }
 
         public WorkoutsViewModel()
         {
             Title = "Browse";
-            Items = new ObservableCollection<Workout>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            Workouts = new ObservableCollection<Workout>();
+            LoadWorkoutsCommand = new Command(async () => await ExecuteLoadWorkoutsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Workout>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewWorkoutPage, Workout>(this, "AddItem", async (obj, workout) =>
             {
-                var newItem = item as Workout;
-                Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
+                var newWorkout = workout as Workout;
+                Workouts.Add(newWorkout);
+                await DataStore.AddItemAsync(newWorkout);
             });
         }
 
-        async Task ExecuteLoadItemsCommand()
+        async Task ExecuteLoadWorkoutsCommand()
         {
             if (IsBusy)
                 return;
@@ -38,11 +38,11 @@ namespace IronTemple.ViewModels
 
             try
             {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                Workouts.Clear();
+                var workouts = await DataStore.GetItemsAsync(true);
+                foreach (var workout in workouts)
                 {
-                    Items.Add(item);
+                    Workouts.Add(workout);
                 }
             }
             catch (Exception ex)

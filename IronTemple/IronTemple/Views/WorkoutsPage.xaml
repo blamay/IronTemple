@@ -16,19 +16,19 @@
 
     <StackLayout>
         <ListView x:Name="WorkoutsListView"
-                ItemsSource="{Binding Items}"
+                ItemsSource="{Binding Workouts}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
-                RefreshCommand="{Binding LoadItemsCommand}"
+                RefreshCommand="{Binding LoadWorkoutsCommand}"
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
-                ItemSelected="OnItemSelected">
+                ItemSelected="OnWorkoutSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="10">
-                            <Label Text="{Binding Text}" 
+                            <Label Text="{Binding Title}" 
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />

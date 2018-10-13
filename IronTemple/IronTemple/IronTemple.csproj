@@ -14,6 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\NewWorkoutPage.xaml.cs">
+      <DependentUpon>NewWorkoutPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\WorkoutDetailPage.xaml.cs">
       <DependentUpon>WorkoutDetailPage.xaml</DependentUpon>
     </Compile>

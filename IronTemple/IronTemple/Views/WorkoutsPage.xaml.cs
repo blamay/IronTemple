@@ -25,13 +25,13 @@ namespace IronTemple.Views
             BindingContext = viewModel = new WorkoutsViewModel();
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async void OnWorkoutSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Workout;
-            if (item == null)
+            var workout = args.SelectedItem as Workout;
+            if (workout == null)
                 return;
 
-            await Navigation.PushAsync(new WorkoutDetailPage(new WorkoutDetailViewModel(item)));
+            await Navigation.PushAsync(new WorkoutDetailPage(new WorkoutDetailViewModel(workout)));
 
             // Manually deselect workout.
             WorkoutsListView.SelectedItem = null;
@@ -39,15 +39,15 @@ namespace IronTemple.Views
 
         async void AddWorkout_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+            await Navigation.PushModalAsync(new NavigationPage(new NewWorkoutPage()));
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            if (viewModel.Workouts.Count == 0)
+                viewModel.LoadWorkoutsCommand.Execute(null);
         }
     }
 }
