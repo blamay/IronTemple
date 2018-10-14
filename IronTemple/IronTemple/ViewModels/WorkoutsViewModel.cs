@@ -25,7 +25,7 @@ namespace IronTemple.ViewModels
             {
                 var newWorkout = workout as Workout;
                 Workouts.Add(newWorkout);
-                await DataStore.AddItemAsync(newWorkout);
+                await WorkoutDataStore.AddItemAsync(newWorkout);
             });
         }
 
@@ -39,7 +39,7 @@ namespace IronTemple.ViewModels
             try
             {
                 Workouts.Clear();
-                var workouts = await DataStore.GetItemsAsync(true);
+                var workouts = await WorkoutDataStore.GetItemsAsync(true);
                 foreach (var workout in workouts)
                 {
                     Workouts.Add(workout);

@@ -6,11 +6,11 @@ using IronTemple.Models;
 
 namespace IronTemple.Services
 {
-    public class MockDataStore : IDataStore<Workout>
+    public class WorkoutMockDataStore : IDataStore<Workout>
     {
         List<Workout> items;
 
-        public MockDataStore()
+        public WorkoutMockDataStore()
         {
             items = new List<Workout>();
             var mockItems = new List<Workout>

@@ -17,7 +17,7 @@ namespace IronTemple.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Workouts, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -26,8 +26,11 @@ namespace IronTemple.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
+                    case (int)MenuItemType.Workouts:
                         MenuPages.Add(id, new NavigationPage(new WorkoutsPage()));
+                        break;
+                    case (int)MenuItemType.Exercises:
+                        MenuPages.Add(id, new NavigationPage(new ExercisesPage()));
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));

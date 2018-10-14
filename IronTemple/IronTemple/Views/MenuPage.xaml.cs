@@ -18,7 +18,8 @@ namespace IronTemple.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Workouts" },
+                new HomeMenuItem {Id = MenuItemType.Workouts, Title="Workouts" },
+                new HomeMenuItem {Id = MenuItemType.Exercises, Title = "Exercises"},
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 

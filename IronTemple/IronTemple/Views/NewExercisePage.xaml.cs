@@ -9,18 +9,18 @@ using IronTemple.Models;
 namespace IronTemple.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NewWorkoutPage : ContentPage
+    public partial class NewExercisePage : ContentPage
     {
-        public Workout Workout { get; set; }
+        public Exercise Exercise { get; set; }
 
-        public NewWorkoutPage()
+        public NewExercisePage()
         {
             InitializeComponent();
 
-            Workout = new Workout
+            Exercise = new Exercise
             {
-                Title = "Workout name",
-                Description = "This is a workout description."
+                Title = "Exercise name",
+                Description = "This is an exercise description."
             };
 
             BindingContext = this;
@@ -28,7 +28,7 @@ namespace IronTemple.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Workout);
+            MessagingCenter.Send(this, "AddItem", Exercise);
             await Navigation.PopModalAsync();
         }
 

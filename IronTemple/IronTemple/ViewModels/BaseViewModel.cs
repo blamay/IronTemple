@@ -12,7 +12,8 @@ namespace IronTemple.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Workout> DataStore => DependencyService.Get<IDataStore<Workout>>() ?? new MockDataStore();
+        public IDataStore<Workout> WorkoutDataStore => DependencyService.Get<IDataStore<Workout>>() ?? new WorkoutMockDataStore();
+        public IDataStore<Exercise> ExerciseDataStore => DependencyService.Get<IDataStore<Exercise>>() ?? new ExerciseMockDataStore();
 
         bool isBusy = false;
         public bool IsBusy

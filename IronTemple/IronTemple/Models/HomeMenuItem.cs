@@ -6,7 +6,8 @@ namespace IronTemple.Models
 {
     public enum MenuItemType
     {
-        Browse,
+        Workouts,
+        Exercises,
         About
     }
     public class HomeMenuItem
