@@ -5,7 +5,7 @@
               Title="{Binding Title}"
              x:Name="BrowseWorkoutsPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddWorkout_Clicked">
+        <ToolbarItem Text="New" Clicked="AddWorkout_Clicked">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="UWP" Value="add.png"/>

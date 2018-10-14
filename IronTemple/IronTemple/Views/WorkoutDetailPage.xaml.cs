@@ -33,5 +33,10 @@ namespace IronTemple.Views
             viewModel = new WorkoutDetailViewModel(item);
             BindingContext = viewModel;
         }
+
+        async void AddExercise_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new AddExercisePage()));
+        }
     }
 }

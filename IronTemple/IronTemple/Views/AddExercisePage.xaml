@@ -1,20 +1,11 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IronTemple.Views.ExercisesPage"
+             x:Class="IronTemple.Views.AddExercisePage"
              Title="{Binding Title}"
-             x:Name="BrowseExercisesPage">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="New" Clicked="AddExercise_Clicked">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="add.png"/>
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
+             x:Name="BrowseAddExercisePage">
 
     <StackLayout>
-        <ListView x:Name="ExercisesListView"
+        <ListView x:Name="AddExerciseListView"
                   ItemsSource="{Binding Exercises}"
                   VerticalOptions="FillAndExpand"
                   HasUnevenRows="true"
