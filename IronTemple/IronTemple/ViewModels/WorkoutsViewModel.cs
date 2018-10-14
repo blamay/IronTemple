@@ -17,7 +17,7 @@ namespace IronTemple.ViewModels
 
         public WorkoutsViewModel()
         {
-            Title = "Browse";
+            Title = "Workouts";
             Workouts = new ObservableCollection<Workout>();
             LoadWorkoutsCommand = new Command(async () => await ExecuteLoadWorkoutsCommand());
 

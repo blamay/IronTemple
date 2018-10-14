@@ -15,12 +15,12 @@ namespace IronTemple.Services
             items = new List<Workout>();
             var mockItems = new List<Workout>
             {
-                new Workout { Id = Guid.NewGuid().ToString(), Text = "First workout", Description="This is an workout description." },
-                new Workout { Id = Guid.NewGuid().ToString(), Text = "Second workout", Description="This is an workout description." },
-                new Workout { Id = Guid.NewGuid().ToString(), Text = "Third workout", Description="This is an workout description." },
-                new Workout { Id = Guid.NewGuid().ToString(), Text = "Fourth workout", Description="This is an workout description." },
-                new Workout { Id = Guid.NewGuid().ToString(), Text = "Fifth workout", Description="This is an workout description." },
-                new Workout { Id = Guid.NewGuid().ToString(), Text = "Sixth workout", Description="This is an workout description." },
+                new Workout { Id = Guid.NewGuid().ToString(), Title = "Chest Day", Description="Back in the Gym!!!" },
+                new Workout { Id = Guid.NewGuid().ToString(), Title = "Back Day", Description="Its Gains Day" },
+                new Workout { Id = Guid.NewGuid().ToString(), Title = "Leg Day", Description="Time to get some mo GAINS" },
+                new Workout { Id = Guid.NewGuid().ToString(), Title = "Shoulder Day", Description="This is an workout description." },
+                new Workout { Id = Guid.NewGuid().ToString(), Title = "Arms Day", Description="This is an workout description." },
+                new Workout { Id = Guid.NewGuid().ToString(), Title = "Sixth workout", Description="This is an workout description." },
             };
 
             foreach (var item in mockItems)
