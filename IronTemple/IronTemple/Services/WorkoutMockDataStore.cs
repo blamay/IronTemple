@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using IronTemple.Models;
@@ -10,17 +11,61 @@ namespace IronTemple.Services
     {
         List<Workout> items;
 
+        public ObservableCollection<Exercise> Exercises { get; set; }
+
         public WorkoutMockDataStore()
         {
             items = new List<Workout>();
+
+            //Exercises = new List<Exercises>
+
             var mockItems = new List<Workout>
             {
-                new Workout { Id = Guid.NewGuid().ToString(), Title = "Chest Day", Description="Back in the Gym!!!" },
-                new Workout { Id = Guid.NewGuid().ToString(), Title = "Back Day", Description="Its Gains Day" },
-                new Workout { Id = Guid.NewGuid().ToString(), Title = "Leg Day", Description="Time to get some mo GAINS" },
-                new Workout { Id = Guid.NewGuid().ToString(), Title = "Shoulder Day", Description="This is an workout description." },
-                new Workout { Id = Guid.NewGuid().ToString(), Title = "Arms Day", Description="This is an workout description." },
-                new Workout { Id = Guid.NewGuid().ToString(), Title = "Sixth workout", Description="This is an workout description." },
+                new Workout
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = "Chest Day",
+                    Description ="Back in the Gym!!!",
+                    ExerciseList =
+                    {
+                    }
+                    //ExerciseList = ExerciseMockDataStore.
+                },
+
+                new Workout
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = "Back Day",
+                    Description ="Its Gains Day"
+                },
+
+                new Workout
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = "Leg Day",
+                    Description ="Time to get some mo GAINS"
+                },
+
+                new Workout
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = "Shoulder Day",
+                    Description ="This is an workout description."
+                },
+
+                new Workout
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = "Arms Day",
+                    Description ="This is an workout description."
+                },
+
+                new Workout
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = "Sixth workout",
+                    Description ="This is an workout description."
+                }
             };
 
             foreach (var item in mockItems)

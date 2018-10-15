@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using IronTemple.Models;
+using IronTemple.Services;
 using IronTemple.ViewModels;
 
 namespace IronTemple.Views
@@ -27,7 +28,8 @@ namespace IronTemple.Views
             var item = new Workout
             {
                 Title = "Workout 1",
-                Description = "This is an workout description."
+                Description = "This is an workout description.",
+                //ExerciseList = Exercise
             };
 
             viewModel = new WorkoutDetailViewModel(item);
